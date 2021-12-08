@@ -12,24 +12,29 @@ public class MemberService {
 	public MemberVO insert(MemberVO vo) {
 		return dao.memberInsert(vo);
 	}
-	
+
 	// 리스트 조회.
 	public List<MemberVO> searchAll() {
 		return dao.memberList();
 	}
-	
+
 	// 한건 조회.
 	public MemberVO searchOne(String id) {
 		return dao.memberSearch(id);
 	}
-	
+
 	// 수정
 	public MemberVO update(MemberVO vo) {
 		return dao.memberUpdate(vo);
 	}
-	
+
 	// 삭제
 	public void delete(String id) {
 		dao.memberDelete(id);
+	}
+
+	// 로그인.
+	public MemberVO login(String id, String pw) {
+		return dao.loginCheck(id, pw);
 	}
 }

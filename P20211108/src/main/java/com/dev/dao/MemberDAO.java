@@ -7,6 +7,33 @@ import java.util.List;
 import com.dev.vo.MemberVO;
 
 public class MemberDAO extends DAO {
+
+	// 로그인 체크
+	public MemberVO loginCheck(String id, String pw) {
+		String sql = "select * from member where id = ? and password = ?";
+		connect();
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
+			psmt.setString(2, pw);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				MemberVO vo = new MemberVO();
+				vo.setId(rs.getString("id"));
+				vo.setPassword(rs.getString("password"));
+				vo.setMail(rs.getString("mail"));
+				vo.setName(rs.getString("name"));
+
+				return vo;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			disconnect();
+		}
+		return null;
+	}
+
 	// 삭제.
 	public void memberDelete(String id) {
 		String sql = "delete member where id = ?";
@@ -14,7 +41,7 @@ public class MemberDAO extends DAO {
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, id);
-			
+
 			int r = psmt.executeUpdate();
 			System.out.println(r + "건 삭제");
 		} catch (SQLException e) {
@@ -23,14 +50,10 @@ public class MemberDAO extends DAO {
 			disconnect();
 		}
 	}
-	
+
 	// 수정.
 	public MemberVO memberUpdate(MemberVO vo) {
-		String sql = "update member set "
-				+ "password = ?,"
-				+ "name = ?,"
-				+ "mail = ?"
-				+ "where id = ?";
+		String sql = "update member set " + "password = ?," + "name = ?," + "mail = ?" + "where id = ?";
 		connect();
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -38,7 +61,7 @@ public class MemberDAO extends DAO {
 			psmt.setString(2, vo.getName());
 			psmt.setString(3, vo.getMail());
 			psmt.setString(4, vo.getId());
-			
+
 			int r = psmt.executeUpdate();
 			System.out.println(r + "건 변경.");
 		} catch (SQLException e) {
@@ -48,7 +71,7 @@ public class MemberDAO extends DAO {
 		}
 		return vo;
 	}
-	
+
 	// 한건 조회.
 	public MemberVO memberSearch(String id) {
 		String sql = "select * from member where id = ?";

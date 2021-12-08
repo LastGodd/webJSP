@@ -8,7 +8,14 @@
 <title>입력정보</title>
 </head>
 <body>
-<!-- 입력.jsp -> 컨트롤러 -> 출력.jsp -->
+	<%
+		String id = (String)session.getAttribute("id");
+		if(id == null) {
+			response.sendRedirect("../login.jsp");
+		} else {
+	%>
+	<h3><%=session.getAttribute("name") %>님, 환영합니다.</h3>
+	<!-- 입력.jsp -> 컨트롤러 -> 출력.jsp -->
 	<form action='../memberInsert.do' method='post'>
 		ID: <input type='text' name='id'><br>
 		비밀번호: <input type='password' name='passwd'><br>
@@ -16,5 +23,8 @@
 		E-mail: ID: <input type='email' name='mail'><br>
 		<input type='submit' value='가입'>
 	</form>
+	<%
+		}
+	%>
 </body>
 </html>
