@@ -9,7 +9,7 @@
 <title>memberList.jsp</title>
 </head>
 <body>
-	<%@ include file="../menu.jsp" %>
+	<%@ include file="../menu.jsp"%>
 	<a href='index.jsp'>첫 페이지로</a>
 	<h3>회원목록</h3>
 	<table border='1'>
@@ -37,6 +37,6 @@
 			%>
 		</tbody>
 	</table>
-	<%@ include file="../footer.jsp" %>
+	<%@ include file="../footer.jsp"%>
 </body>
 </html>

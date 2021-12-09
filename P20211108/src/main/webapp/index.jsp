@@ -11,17 +11,17 @@
 	<%
 		String id = (String)session.getAttribute("id");
 		if(id == null) {
-			response.sendRedirect("member/login.jsp");
+			response.sendRedirect("login.jsp");
 		} else {
 	%>
-		<h3><%=session.getAttribute("name") %>님, 환영합니다!!</h3>
+ 		<h3><%=session.getAttribute("name") %>님, 환영합니다!!</h3>
 		<a href="Logout.do">로그아웃</a><br>
 		<a href='member/memberInput.jsp'>회원등록</a><br> <!--  -->
 		<a href='memberList.do'>회원목록</a><br> <!-- memberList.do, memberListControll, memberList.jsp --> 
 		<a href='member/memberSearch.jsp'>회원검색</a><br> <!--  -->
 		<a href='member/memberUpdate.jsp'>회원수정</a><br> <!--  -->
 		<a href='member/memberDelete.jsp'>회원삭제</a><br> <!--  -->
-	<%		
+	<%
 		}
 	%>
 	

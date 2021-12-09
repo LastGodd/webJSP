@@ -12,6 +12,7 @@
 	<%
 	MemberVO vo = (MemberVO)request.getAttribute("member");
 	%>
+	<%@ include file="../menu.jsp" %>
 	<a href='index.jsp'>첫 페이지로</a>
 	<h3>입력한 아이디: <%=vo.getId() %></h3>
 	<h3>입력한 이름: <%=vo.getName() %></h3>

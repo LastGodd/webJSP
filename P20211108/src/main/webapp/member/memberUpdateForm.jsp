@@ -8,9 +8,10 @@
 <title>member/memberUpdateForm.jsp</title>
 </head>
 <body>
-<%
-	MemberVO vo = (MemberVO)request.getAttribute("member");
-%>
+	<%
+		MemberVO vo = (MemberVO)request.getAttribute("member");
+	%>
+	<%@ include file="../menu.jsp" %>
 	<form action='memberUpdate.do' method='post'>
 		ID: <input type='text' name='id' value='<%=vo.getId() %>'><br>
 		비밀번호: <input type='password' name='passwd' value='<%=vo.getPassword() %>'><br>

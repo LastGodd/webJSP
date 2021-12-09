@@ -7,6 +7,7 @@
 <title>memberSearch.jsp</title>
 </head>
 <body>
+	<%@ include file="../menu.jsp" %>
 	<a href='index.jsp'>첫 페이지</a>
 	<h3>회원검색</h3>
 	<form action='../memberSearch.do' method='get'>

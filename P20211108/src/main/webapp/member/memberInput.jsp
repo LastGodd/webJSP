@@ -8,12 +8,13 @@
 <title>입력정보</title>
 </head>
 <body>
-	<%
+	<%-- <%
 		String id = (String)session.getAttribute("id");
 		if(id == null) {
 			response.sendRedirect("login.jsp");
 		} else {
-	%>
+	%> --%>
+	<%@ include file="../menu.jsp" %>
 	<h3><%=session.getAttribute("name") %>님, 환영합니다.</h3>
 	<!-- 입력.jsp -> 컨트롤러 -> 출력.jsp -->
 	<form action='../memberInsert.do' method='post'>
@@ -23,8 +24,8 @@
 		E-mail: ID: <input type='email' name='mail'><br>
 		<input type='submit' value='가입'>
 	</form>
-	<%
+	<%-- <%
 		}
-	%>
+	%> --%>
 </body>
 </html>

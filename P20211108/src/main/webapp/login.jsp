@@ -7,11 +7,13 @@
 <title>login.jsp</title>
 </head>
 <body>
+	<%@ include file="../menu.jsp" %>
 	<h3>로그인 화면</h3>
 	<form action='../Login.do' method='post'>
 		ID: <input type='text' name='id'><br>
 		PW: <input type='password' name='passwd'><br>
 		<input type='submit' value='Login'>
 	</form>
+	<%@ include file="footer.jsp" %>
 </body>
 </html>

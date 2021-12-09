@@ -10,6 +10,7 @@
 	<%
 	String id = (String) request.getAttribute("rid");
 	%>
+	<%@ include file="../menu.jsp" %>
 	<a href='index.jsp'>첫 페이지</a>
 	<h3>회원 수정 정보</h3>
 	<table border='1'>

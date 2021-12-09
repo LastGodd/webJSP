@@ -7,6 +7,7 @@
 <title>memberDelete.jsp</title>
 </head>
 <body>
+	<%@ include file="../menu.jsp" %>
 	<a href='../index.jsp'>첫 페이지</a>
 	<h3>회원정보삭제</h3>
 	<form action='../memberDelete.do' method='get'>

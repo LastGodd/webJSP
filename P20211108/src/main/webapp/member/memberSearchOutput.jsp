@@ -15,6 +15,7 @@
 	<%
 	MemberVO vo = (MemberVO) request.getAttribute("member");
 	%>
+	<%@ include file="../menu.jsp" %>
 	<a href='index.jsp'>첫 페이지</a>
 	<h3>회원 상세 정보</h3>
 	<%
